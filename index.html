@@ -8,25 +8,26 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src='https://connect.facebook.net/en_US/fbevents.js';
-  s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script');
 
-  fbq('init', '558697003977909'); 
-  fbq('track', 'PageView');
-</script>
-<noscript>
-  <img height="1" width="1" style="display:none"
-       src="https://www.facebook.com/tr?id=558697003977909&ev=PageView&noscript=1"/>
-</noscript>
-<!-- End Meta Pixel Code -->
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src='https://connect.facebook.net/en_US/fbevents.js';
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script');
+
+    fbq('init', '558697003977909'); 
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=558697003977909&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
   <div class="container">
@@ -35,7 +36,7 @@
     <p>Свяжитесь с менеджером, чтобы получить актуальные вакансии и заполнить анкету для участвия в программе.</p>
 
     <div class="buttons">
-      <a href="https://wa.me/447871715204?text=Здравствуйте!%20Хочу%20участвовать%20в%20дополнительном%20наборе!" class="btn whatsapp">
+      <a href="https://wa.me/447871715204?text=Здравствуйте.%20Хочу%20участвовать%20в%20дополнительном%20наборе!" class="btn whatsapp">
         <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
       <a href="https://t.me/Join_uk_job" class="btn telegram">
@@ -51,5 +52,25 @@
       </div>
     </div>
   </div>
+
+  <!-- Meta Pixel Click Tracking -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const whatsappBtn = document.querySelector('.btn.whatsapp');
+      const telegramBtn = document.querySelector('.btn.telegram');
+
+      if (whatsappBtn) {
+        whatsappBtn.addEventListener('click', function () {
+          fbq('track', 'Contact', { content_name: 'WhatsApp' });
+        });
+      }
+
+      if (telegramBtn) {
+        telegramBtn.addEventListener('click', function () {
+          fbq('track', 'Contact', { content_name: 'Telegram' });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
