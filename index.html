@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Тест с задержкой и Meta Pixel</title>
+  <title>Связь с нами</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -31,8 +31,9 @@
 </head>
 <body>
   <div class="container">
-    <h1>🔔 Тест с задержкой и пикселем</h1>
-    <p>Теперь Meta Pixel точно успевает отправить событие при клике.</p>
+    <img src="logo.gif" alt="Логотип" class="logo" />
+    <h1>🔔 Идёт дополнительный набор на сезонные работы</h1>
+    <p>Свяжитесь с менеджером, чтобы получить актуальные вакансии и заполнить анкету для участвия в программе.</p>
 
     <div class="buttons">
       <a href="#" class="btn whatsapp" id="whatsapp-btn">
@@ -42,9 +43,17 @@
         <i class="fab fa-telegram-plane"></i> Telegram
       </a>
     </div>
+
+    <div class="manager">
+      <img src="manager.jpg" alt="Менеджер" class="manager-photo" />
+      <div class="manager-info">
+        <h2>Сергей Смирнов</h2>
+        <p>Менеджер по подбору персонала</p>
+      </div>
+    </div>
   </div>
 
-  <!-- CLICK WITH DELAY -->
+  <!-- Pixel tracking with delay -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const whatsappBtn = document.getElementById('whatsapp-btn');
@@ -54,7 +63,6 @@
         whatsappBtn.addEventListener('click', function (e) {
           e.preventDefault();
           fbq('track', 'Contact', { content_name: 'WhatsApp' });
-          console.log('WhatsApp click → отслежено, ждём переход...');
           setTimeout(() => {
             window.location.href = "https://wa.me/447871715204?text=Здравствуйте.%20Хочу%20участвовать%20в%20дополнительном%20наборе!";
           }, 300);
@@ -65,7 +73,6 @@
         telegramBtn.addEventListener('click', function (e) {
           e.preventDefault();
           fbq('track', 'Contact', { content_name: 'Telegram' });
-          console.log('Telegram click → отслежено, ждём переход...');
           setTimeout(() => {
             window.location.href = "https://t.me/Join_uk_job";
           }, 300);
